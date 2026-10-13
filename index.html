@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html class="dark" lang="en" style="">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_standard" name="shell-type">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary": "#f7f5f5", "secondary-container": "#454747", "inverse-on-surface": "#313030", "surface-container": "#201f1f", "on-primary": "#00363a", "surface-container-low": "#1c1b1b", "on-surface-variant": "#b9cacb", "secondary-fixed": "#e2e2e2", "secondary": "#c6c6c6", "outline-variant": "#3b494b", "on-primary-fixed-variant": "#004f54", "error-container": "#93000a", "on-tertiary-container": "#5e5f5f", "surface": "#131313", "error": "#ffb4ab", "inverse-surface": "#e5e2e1", "on-error": "#690005", "secondary-fixed-dim": "#c6c6c6", "on-error-container": "#ffdad6", "on-secondary": "#2f3131", "on-background": "#e5e2e1", "on-secondary-fixed-variant": "#454747", "primary-container": "#00f0ff", "surface-variant": "#353534", "surface-tint": "#00dbe9", "surface-container-lowest": "#0e0e0e", "on-tertiary": "#303031", "surface-dim": "#131313", "primary-fixed-dim": "#00dbe9", "surface-container-high": "#2a2a2a", "inverse-primary": "#006970", "on-primary-fixed": "#002022", "on-secondary-fixed": "#1a1c1c", "tertiary-container": "#dad9d9", "background": "#131313", "primary": "#dbfcff", "surface-bright": "#3a3939", "primary-fixed": "#7df4ff", "on-primary-container": "#006970", "tertiary-fixed": "#e3e2e2", "on-secondary-container": "#b4b5b5", "outline": "#849495", "on-surface": "#e5e2e1", "on-tertiary-fixed-variant": "#464747", "on-tertiary-fixed": "#1b1c1c", "surface-container-highest": "#353534", "tertiary-fixed-dim": "#c7c6c6" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "3rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter": "1.5rem", "margin-mobile": "1rem", "space-xl": "4rem", "space-sm": "0.5rem", "space-lg": "2rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "body-md": ["Newsreader"], "title-editorial": ["Newsreader"], "headline-md": ["Bebas Neue"], "ticker-mono": ["Bebas Neue"], "headline-lg-mobile": ["Bebas Neue"], "caption-italic": ["Newsreader"], "display-xl": ["Bebas Neue"], "headline-sm": ["Bebas Neue"], "display-xl-mobile": ["Bebas Neue"], "label-caps": ["Bebas Neue"], "headline-lg": ["Bebas Neue"], "body-lg": ["Newsreader"] }, "fontSize": { "body-md": ["16px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "400" }], "title-editorial": ["26px", { "lineHeight": "34px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["36px", { "lineHeight": "36px", "letterSpacing": "0.06em", "fontWeight": "400" }], "ticker-mono": ["18px", { "lineHeight": "18px", "letterSpacing": "0.18em", "fontWeight": "400" }], "headline-lg-mobile": ["38px", { "lineHeight": "38px", "letterSpacing": "0.04em", "fontWeight": "400" }], "caption-italic": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "400" }], "display-xl": ["112px", { "lineHeight": "96px", "letterSpacing": "0.04em", "fontWeight": "400" }], "headline-sm": ["24px", { "lineHeight": "26px", "letterSpacing": "0.08em", "fontWeight": "400" }], "display-xl-mobile": ["56px", { "lineHeight": "52px", "letterSpacing": "0.03em", "fontWeight": "400" }], "label-caps": ["14px", { "lineHeight": "14px", "letterSpacing": "0.14em", "fontWeight": "400" }], "headline-lg": ["64px", { "lineHeight": "60px", "letterSpacing": "0.05em", "fontWeight": "400" }], "body-lg": ["19px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "400" }] } } } };</script>
+</head>
+
+<body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface antialiased">
+  <header
+    class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
+    <div class="h-20 w-full px-margin-mobile lg:px-margin flex items-center justify-between">
+      <div class="flex items-center gap-space-md"><img alt="TIECO MEDIA - WORKING LOGO PASS 01.png"
+          class="h-8 w-auto object-contain filter invert contrast-200"
+          src="https://lh3.googleusercontent.com/aida/AEtjO1XfzFi2BhlNZBwUC5WwM84li-TLcl0ptCILxFmuc780MHaSTDgWTGOmT9vsDBgPt7VqQxm5FpRwSFO7qgmUmDY3LuD0yS6mzOBEXA12i9DsDaV4JJER_E7xBvhpHYWPfDfbfHGnMsDd0Zljpc-CNQhvcgciYtEtOy3u8zdWIuPtVX4iK_nk_nz8N38cF4Ww3HMNYHuZaqE0-6BKB20I-ds4q_rw1jb1DCQHz8s-s3KxWndgWQxqQC4jYvbURct4nFnDyl_1mEmch3c">
+        <div class="flex flex-col"><span
+            class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface uppercase">TIECO MEDIA</span><span
+            class="font-caption-italic text-caption-italic text-on-surface-variant italic hidden sm:block">Cinema &amp;
+            Editorial Post</span></div>
+      </div>
+      <nav class="hidden lg:flex items-center gap-space-lg"
+        data-active-classes="text-primary-container bg-surface-container-high"><a aria-current="page"
+          class="font-label-caps transition-colors uppercase px-space-xs py-space-xs text-primary-container bg-surface-container-high"
+          data-path="home" href="#">HOME</a><a
+          class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors uppercase px-space-xs py-space-xs"
+          data-path="work" href="#">WORK</a><a
+          class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors uppercase px-space-xs py-space-xs"
+          data-path="about" href="#">ABOUT</a><a
+          class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors uppercase px-space-xs py-space-xs"
+          data-path="calendly" href="#">CALENDLY</a><a href="mailto:hello@tiecomedia.com"
+          class="px-space-md py-1.5 bg-primary-container text-surface-container-lowest font-label-caps text-label-caps uppercase tracking-widest font-semibold hover:bg-surface-tint transition-colors flex items-center gap-1.5"><span
+            class="">CONTACT US</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a></nav>
+    </div>
+  </header>
+  <main class="w-full pt-20 bg-surface-container-lowest min-h-screen">
+    <div class="flex flex-col w-full text-on-surface">
+      <!-- ======================================================== -->
+      <!-- HERO: 01 BOUTIQUE SHORT-FORM CINEMA & STORYTELLING       -->
+      <!-- ======================================================== -->
+      <section class="relative w-full px-margin-mobile lg:px-margin pb-space-xl">
+        <div class="max-w-7xl mx-auto flex flex-col space-y-space-lg">
+          <!-- Top Meta Eyebrow with Editorial Marker -->
+          <div class="flex items-center justify-between pt-space-md">
+            <div class="flex items-center gap-space-sm">
+              <span class="font-ticker-mono text-ticker-mono text-primary-container tracking-[0.25em]">01</span>
+              <span class="w-8 h-[1px] bg-outline-variant"></span>
+              <span class="font-label-caps text-label-caps text-on-surface-variant tracking-[0.2em] uppercase">BOUTIQUE
+                SHORT-FORM CINEMA &amp; STORYTELLING</span>
+            </div>
+            <div class="hidden md:flex items-center gap-space-sm">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-ping"></span>
+              <span
+                class="font-ticker-mono text-ticker-mono text-[12px] text-on-surface-variant tracking-widest uppercase">REC
+                // TC 00:14:28:19</span>
+            </div>
+          </div>
+          <!-- Monumental Headline & Narrative Collide -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-end">
+            <div class="lg:col-span-8 space-y-space-xs">
+              <h1 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-wider leading-none m-0">
+                WHAT WE DO IS <span class="text-primary-container">CUT THE LONG STORY SHORT.</span></h1>
+              <p class="font-title-editorial text-title-editorial italic text-on-surface-variant leading-tight">
+                professionally edited short-form content designed to keep your brand front and center.
+              </p>
+            </div>
+            <div class="lg:col-span-4 flex flex-col justify-end space-y-space-sm">
+              <p class="font-body-md text-body-md text-secondary leading-relaxed">On brand editing, podcast trailers,
+                and brand narratives engineered to grow your audience across social media platforms.</p>
+
+            </div>
+          </div>
+          <!-- Widescreen Cinematic Hero Frame -->
+          <div
+            class="relative w-full aspect-[16/9] lg:aspect-[21/9] bg-surface-container-lowest overflow-hidden group shadow-2xl">
+            <img alt="Tieco Media Featured Film"
+              class="w-full h-full object-cover grayscale contrast-125 brightness-90 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHI3mmvEEoI8V-qhPZAWAOcjMY_p-Sx0qB3jN8fTXMpCz3eKP4CzSg_1XsqyAj2jThvINIgnV4reEcEIea-6ZtInFgj6UmZ7REGVI4BuzsLcOlAmG5FJ6AaWXVKwF6N7rc9XVJws3WJYO9vV19kV8TbuOwfRhCsL7RnofFok5XAjQX6wI6rcNV6cG4EKqj3ywNkLfR97Te0kkMe43J0p3WpRmY2h7KiyRyAvuRW-ap7tTAYsCcQS9ipBCbGHjY6Tghick">
+            <!-- Subtle Cinematic Vignette Overlay -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-surface-container-lowest/40 pointer-events-none">
+
+              <!-- Aspect Ratio and Lens Metadata Tag -->
+              <div class="absolute top-4 right-4 lg:top-8 lg:right-8 flex items-center gap-2">
+                <span
+                  class="px-2.5 py-1 bg-surface-container-lowest/90 font-ticker-mono text-[11px] text-primary-container tracking-widest uppercase">
+                  ARRI ALEXA 35 // COOKE ANAMORPHIC /i
+                </span>
+              </div>
+              <!-- Center Interactive Reel Trigger -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <button aria-label="Play showreel"
+                  class="relative group/reel flex items-center justify-center w-20 h-20 lg:w-28 lg:h-28 rounded-full bg-surface-container-lowest/80 backdrop-blur-lg border-0 hover:bg-primary-container transition-all duration-300"
+                  type="button">
+                  <!-- Rotating Text Ring Simulation -->
+                  <div
+                    class="absolute inset-0 rounded-full border border-dashed border-primary-container/40 animate-[spin_12s_linear_infinite]">
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-on-surface group-hover/reel:text-surface-container-lowest text-3xl lg:text-4xl transition-colors">play_arrow</span>
+                  <span
+                    class="absolute -bottom-8 font-label-caps text-[11px] tracking-[0.25em] text-on-surface uppercase opacity-0 group-hover/reel:opacity-100 transition-opacity">WATCH
+                    REEL</span>
+                </button>
+              </div>
+              <!-- Bottom Technical Overlay Bar -->
+              <div
+                class="absolute bottom-4 left-4 right-4 lg:bottom-6 lg:left-8 lg:right-8 flex items-end justify-between">
+                <div class="flex flex-col">
+                  <span
+                    class="font-ticker-mono text-ticker-mono text-[12px] text-primary-container tracking-widest uppercase">FEATURING
+                    // "DO A PHD"</span>
+                  <span class="font-caption-italic text-caption-italic text-secondary text-sm">Longform Conversion &amp;
+                    High-Retention Pacing</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="font-ticker-mono text-ticker-mono text-[11px] text-on-surface-variant">2.39:1
+                    RATIO</span>
+                  <span class="w-1 h-1 rounded-full bg-primary-container"></span>
+                  <span class="font-ticker-mono text-ticker-mono text-[11px] text-on-surface-variant">4K PRORES 4444
+                    XQ</span>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+      <!-- ======================================================== -->
+      <!-- CONTINUOUS CINEMA MARQUEE RIBBON                         -->
+      <!-- ======================================================== -->
+      <div
+        class="w-full bg-surface-container-low py-space-sm overflow-hidden whitespace-nowrap select-none shadow-inner">
+        <div class="flex items-center gap-space-lg animate-[marquee_24s_linear_infinite]"><span
+            class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">SHORT-FORM
+            POST-PRODUCTION</span><span class="text-primary-container text-headline-md">—</span><span
+            class="font-headline-md text-headline-md tracking-wider uppercase text-secondary">PODCAST
+            TRAILERS</span><span class="text-primary-container text-headline-md">—</span><span
+            class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">EVENT
+            HIGHLIGHTS</span><span class="text-primary-container text-headline-md">—</span><span
+            class="font-headline-md text-headline-md tracking-wider uppercase text-secondary">SHORT-FORM
+            CLIPS</span><span class="text-primary-container text-headline-md">—</span><span
+            class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">SHORT-FORM BRANDING &amp;
+            IDEATION</span><span class="text-primary-container text-headline-md">—</span><span
+            class="font-headline-md text-headline-md tracking-wider uppercase text-secondary">SHORT-FORM
+            POST-PRODUCTION</span><span class="text-primary-container text-headline-md">—</span><span
+            class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">PODCAST
+            TRAILERS</span><span class="text-primary-container text-headline-md">—</span><span
+            class="font-headline-md text-headline-md tracking-wider uppercase text-secondary">EVENT
+            HIGHLIGHTS</span><span class="text-primary-container text-headline-md">—</span><span
+            class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">SHORT-FORM
+            CLIPS</span><span class="text-primary-container text-headline-md">—</span><span
+            class="font-headline-md text-headline-md tracking-wider uppercase text-secondary">SHORT-FORM BRANDING &amp;
+            IDEATION</span><span class="text-primary-container text-headline-md">—</span></div>
+      </div>
+      <!-- ======================================================== -->
+      <!-- SECTION 2: FEATURED PRODUCTIONS & PORTFOLIO             -->
+      <!-- ======================================================== -->
+      <section class="w-full px-margin-mobile lg:px-margin py-space-xl">
+        <div class="max-w-7xl mx-auto flex flex-col space-y-space-lg">
+          <!-- Section Title & Taxonomy Header -->
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+            <div class="space-y-space-xs">
+              <div class="flex items-center gap-2">
+                <span
+                  class="font-ticker-mono text-ticker-mono text-primary-container text-[12px] tracking-widest">ARCHIVE
+                  // 02</span>
+                <span class="w-6 h-[1px] bg-outline-variant"></span>
+                <span class="font-caption-italic text-caption-italic text-on-surface-variant">curated narrative
+                  works</span>
+              </div>
+              <h2 class="font-headline-lg text-headline-lg uppercase tracking-wide text-on-surface m-0">FEATURED EDITS
+              </h2>
+            </div>
+            <!-- Filter Pills inspired by Genesis/Frame.s -->
+            <div class="flex flex-wrap items-center gap-2"><button
+                class="px-space-md py-1.5 bg-surface-container-high text-primary-container font-label-caps text-label-caps uppercase tracking-wider"
+                type="button">ALL EDITS</button><button
+                class="px-space-md py-1.5 bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-wider transition-colors"
+                type="button">PODCAST TRAILERS</button><button
+                class="px-space-md py-1.5 bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-wider transition-colors"
+                type="button">SHORT-FORM VIRAL</button><button
+                class="px-space-md py-1.5 bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-wider transition-colors"
+                type="button">COMMERCIAL EDITS</button></div>
+          </div>
+          <!-- Production Cards Mosaic -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+            <!-- Production 01: Widescreen Left for Dead (16:9) -->
+            <div class="md:col-span-7 flex flex-col bg-surface-container-low overflow-hidden group">
+              <div class="relative aspect-video w-full overflow-hidden bg-surface-container-lowest">
+                <img alt="Left for Dead - Production"
+                  class="w-full h-full object-cover grayscale contrast-125 brightness-95 group-hover:scale-105 group-hover:grayscale-0 transition-transform duration-700 ease-out"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgHC2ncP_ifAr5jpHPWpicV6mrUiPwYVlWnQKSaVJ5tV4MACj1ZPtPoMKXBgkmAmL7niLzLuPeP8YGUh54jH0_XwgRG_YFeWE7B1uhJVxHLSsOcSiyZ3hhi-xeaP5mcqrTeNRiV9FpP2WuVF-16pcS4U-aPUUIS4T6G5de7yqAO_OcQB_YbR-UG542Y_XOmHhwYXNoR935FDSp42ztndEC1NP_ppeWnM68t9yP5IUckOUlocXPkAi0HlaNEeI9DNLUDag">
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent">
+                </div>
+                <!-- Floating Quick Play Indicator -->
+                <div
+                  class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center shadow-lg">
+                    <span class="material-symbols-outlined text-surface-container-lowest text-2xl">play_arrow</span>
+                  </div>
+                </div>
+                <div class="absolute top-4 left-4">
+                  <span
+                    class="px-2 py-1 bg-surface-container-lowest/90 font-ticker-mono text-[11px] text-primary-container tracking-wider uppercase">01
+                    // PODCAST TRAILER</span>
+                </div>
+                <div class="absolute bottom-4 right-4">
+                  <span
+                    class="px-2 py-0.5 bg-surface-container-lowest/80 font-ticker-mono text-[11px] text-on-surface tracking-widest">02:45
+                    MIN</span>
+                </div>
+              </div>
+              <div class="p-space-md flex flex-col justify-between flex-grow bg-surface-container-low space-y-space-sm">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <h3
+                      class="font-headline-md text-headline-md uppercase tracking-wider text-on-surface group-hover:text-primary-container transition-colors m-0">
+                      LEFT FOR DEAD</h3>
+                    <p class="font-caption-italic text-caption-italic text-on-surface-variant italic mt-1">Dark
+                      true-crime series launch trailer crafted for cross-platform virality &amp; streaming distribution.
+                    </p>
+                  </div>
+                  <span class="font-ticker-mono text-ticker-mono text-on-surface-variant text-[14px]">2025</span>
+                </div>
+                <div class="flex items-center justify-between pt-space-xs text-xs">
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">SOUND: 5.1
+                      MASTER</span>
+                    <span class="text-outline-variant">•</span>
+                    <span
+                      class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase">TIKTOK
+                      &amp; REELS PACED</span>
+                  </div>
+                  <a class="font-label-caps text-label-caps text-primary-container hover:underline uppercase flex items-center gap-1"
+                    href="#">CASE STUDY <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+                </div>
+              </div>
+            </div>
+            <!-- Production 02: Vertical Short-Form "Hosted by Judi Love" (9:16 or 4:5 framed) -->
+            <div class="md:col-span-5 flex flex-col bg-surface-container-low overflow-hidden group">
+              <div class="relative aspect-video md:aspect-[4/5] w-full overflow-hidden bg-surface-container-lowest">
+                <img alt="Hosted by Judi Love"
+                  class="w-full h-full object-cover grayscale contrast-125 brightness-95 group-hover:scale-105 group-hover:grayscale-0 transition-transform duration-700 ease-out"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxoEbrhpVtQkHH_E-qltpF710SElrDyR8DPX_wu8hOPxY2aeb0cmxuwPlmvh58gbTVMSxXu81n_Pj1XcKUMWL0f7qDSgAAKIM_EB-Z26UlaNgQzYpiHf1Sxc7OX_boMhM0THnI_ixJXLdPDqL6p5YiRMp9mC76GP12jTfis6A4AkvysZtvmNRBTwTgeGwYzDFBjQfaEQ6EPbbYxealOqExycaI7yYJIIQHk5_GM4D0b0VKlGUV6bP4qC-M9hFqnxq-tkE">
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent">
+                </div>
+                <div
+                  class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center shadow-lg">
+                    <span class="material-symbols-outlined text-surface-container-lowest text-2xl">play_arrow</span>
+                  </div>
+                </div>
+                <div class="absolute top-4 left-4">
+                  <span
+                    class="px-2 py-1 bg-surface-container-lowest/90 font-ticker-mono text-[11px] text-primary-container tracking-wider uppercase">02
+                    // VIRAL REEL</span>
+                </div>
+                <div class="absolute bottom-4 right-4">
+                  <span
+                    class="px-2 py-0.5 bg-surface-container-lowest/80 font-ticker-mono text-[11px] text-on-surface tracking-widest">00:58
+                    SEC</span>
+                </div>
+              </div>
+              <div class="p-space-md flex flex-col justify-between flex-grow bg-surface-container-low space-y-space-sm">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <h3
+                      class="font-headline-md text-headline-md uppercase tracking-wider text-on-surface group-hover:text-primary-container transition-colors m-0">
+                      HOSTED BY JUDI LOVE</h3>
+                    <p class="font-caption-italic text-caption-italic text-on-surface-variant italic mt-1">High-energy
+                      comedic interview cutdown engineered with kinetic typography and dynamic punch zooms.</p>
+                  </div>
+                  <span class="font-ticker-mono text-ticker-mono text-on-surface-variant text-[14px]">2025</span>
+                </div>
+                <div class="flex items-center justify-between pt-space-xs text-xs">
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">9:16
+                      VERTICAL NATIVE</span>
+                    <span class="text-outline-variant">•</span>
+                    <span class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase">4.8M
+                      ORGANIC VIEWS</span>
+                  </div>
+                  <a class="font-label-caps text-label-caps text-primary-container hover:underline uppercase flex items-center gap-1"
+                    href="#">CASE STUDY <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+                </div>
+              </div>
+            </div>
+            <!-- Production 03: Vertical Short-Form "Right in the Middle" -->
+            <div class="md:col-span-5 flex flex-col bg-surface-container-low overflow-hidden group">
+              <div class="relative aspect-video md:aspect-[4/5] w-full overflow-hidden bg-surface-container-lowest">
+                <img alt="Right in the Middle"
+                  class="w-full h-full object-cover grayscale contrast-125 brightness-95 group-hover:scale-105 group-hover:grayscale-0 transition-transform duration-700 ease-out"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5a0hKHOnKvtL1Jb6Yf-RlSnNVLLGT7n94LMy8-ujm4wUKpSNT0RrWSxaLWs2Dg4oYit1fKFUULLrsK-MpnCtfzrlrcZTIZfZi92JkAKGMEL7B-YeKxxWtI4fAGiLNduCCOndZlH4iBYWZGtQZxObsKs5CodlMzd37F3B-Y21f_wWZ0rEZUxHZKJioMC9AaarRUU3PvfJDTO5KfrXTqeKyzpEqe34bYCSqVZm3GLb-EmOQFiMAqnlKJgVhtHOGT6Wy5nE">
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent">
+                </div>
+                <div
+                  class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center shadow-lg">
+                    <span class="material-symbols-outlined text-surface-container-lowest text-2xl">play_arrow</span>
+                  </div>
+                </div>
+                <div class="absolute top-4 left-4">
+                  <span
+                    class="px-2 py-1 bg-surface-container-lowest/90 font-ticker-mono text-[11px] text-primary-container tracking-wider uppercase">03
+                    // EPISODIC SHORT</span>
+                </div>
+                <div class="absolute bottom-4 right-4">
+                  <span
+                    class="px-2 py-0.5 bg-surface-container-lowest/80 font-ticker-mono text-[11px] text-on-surface tracking-widest">01:15
+                    MIN</span>
+                </div>
+              </div>
+              <div class="p-space-md flex flex-col justify-between flex-grow bg-surface-container-low space-y-space-sm">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <h3
+                      class="font-headline-md text-headline-md uppercase tracking-wider text-on-surface group-hover:text-primary-container transition-colors m-0">
+                      RIGHT IN THE MIDDLE</h3>
+                    <p class="font-caption-italic text-caption-italic text-on-surface-variant italic mt-1">
+                      Dialogue-driven dramatic sequence converted from feature rushes into episodic mobile bites.</p>
+                  </div>
+                  <span class="font-ticker-mono text-ticker-mono text-on-surface-variant text-[14px]">2024</span>
+                </div>
+                <div class="flex items-center justify-between pt-space-xs text-xs">
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">SPLIT FRAME
+                      GRADE</span>
+                    <span class="text-outline-variant">•</span>
+                    <span class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase">98%
+                      RETENTION RATE</span>
+                  </div>
+                  <a class="font-label-caps text-label-caps text-primary-container hover:underline uppercase flex items-center gap-1"
+                    href="#">CASE STUDY <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+                </div>
+              </div>
+            </div>
+            <!-- Production 04: Widescreen Master "Do a PhD" -->
+            <div class="md:col-span-7 flex flex-col bg-surface-container-low overflow-hidden group">
+              <div class="relative aspect-video w-full overflow-hidden bg-surface-container-lowest">
+                <img alt="Do a PhD Master Production"
+                  class="w-full h-full object-cover grayscale contrast-125 brightness-95 group-hover:scale-105 group-hover:grayscale-0 transition-transform duration-700 ease-out"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHI3mmvEEoI8V-qhPZAWAOcjMY_p-Sx0qB3jN8fTXMpCz3eKP4CzSg_1XsqyAj2jThvINIgnV4reEcEIea-6ZtInFgj6UmZ7REGVI4BuzsLcOlAmG5FJ6AaWXVKwF6N7rc9XVJws3WJYO9vV19kV8TbuOwfRhCsL7RnofFok5XAjQX6wI6rcNV6cG4EKqj3ywNkLfR97Te0kkMe43J0p3WpRmY2h7KiyRyAvuRW-ap7tTAYsCcQS9ipBCbGHjY6Tghick">
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent">
+                </div>
+                <div
+                  class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center shadow-lg">
+                    <span class="material-symbols-outlined text-surface-container-lowest text-2xl">play_arrow</span>
+                  </div>
+                </div>
+                <div class="absolute top-4 left-4">
+                  <span
+                    class="px-2 py-1 bg-surface-container-lowest/90 font-ticker-mono text-[11px] text-primary-container tracking-wider uppercase">04
+                    // DOCUMENTARY TRAILER</span>
+                </div>
+                <div class="absolute bottom-4 right-4">
+                  <span
+                    class="px-2 py-0.5 bg-surface-container-lowest/80 font-ticker-mono text-[11px] text-on-surface tracking-widest">03:12
+                    MIN</span>
+                </div>
+              </div>
+              <div class="p-space-md flex flex-col justify-between flex-grow bg-surface-container-low space-y-space-sm">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <h3
+                      class="font-headline-md text-headline-md uppercase tracking-wider text-on-surface group-hover:text-primary-container transition-colors m-0">
+                      DO A PHD (THE SCRIPT)</h3>
+                    <p class="font-caption-italic text-caption-italic text-on-surface-variant italic mt-1">Academic
+                      research converted into cinematic spectacle with customized kinetic text layers and high-impact
+                      sound design.</p>
+                  </div>
+                  <span class="font-ticker-mono text-ticker-mono text-on-surface-variant text-[14px]">2025</span>
+                </div>
+                <div class="flex items-center justify-between pt-space-xs text-xs">
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">21:9 CINEMA
+                      SCOPE</span>
+                    <span class="text-outline-variant">•</span>
+                    <span
+                      class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase">AWARD
+                      SELECTION</span>
+                  </div>
+                  <a class="font-label-caps text-label-caps text-primary-container hover:underline uppercase flex items-center gap-1"
+                    href="#">CASE STUDY <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======================================================== -->
+      <!-- SECTION 3: DISTINCT CRISP CALENDLY SCHEDULING UI         -->
+      <!-- ======================================================== -->
+      <section class="w-full px-margin-mobile lg:px-margin py-space-xl bg-surface-container-lowest relative"
+        id="booking-console">
+        <!-- Subtle architectural backdrop accents -->
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+          <!-- Section Intro Header -->
+          <div class="text-center max-w-2xl mb-space-lg space-y-space-xs">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high">
+              <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+              <span
+                class="font-ticker-mono text-ticker-mono text-primary-container text-[12px] tracking-[0.2em] uppercase">GROW
+                YOUR BRAND WITH</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg uppercase tracking-wide text-on-surface m-0">SHORT-FORM
+              CONTENT.</h2>
+            <p class="font-title-editorial text-title-editorial italic text-on-surface-variant leading-tight">A
+              20-minute discovery call slot to discuss your brand goals and see if we're a good fit. See you on the
+              other side.</p>
+          </div>
+          <!-- HIGH-CONTRAST DISTINCT CRISP WHITE/CREAM CALENDLY MODAL CARD -->
+          <!-- Modeled after an authentic Calendly embed / paper production slate placed cleanly against the dark stage -->
+          <div
+            class="w-full max-w-4xl bg-tertiary text-on-tertiary shadow-2xl overflow-hidden rounded-none flex flex-col md:flex-row">
+            <!-- Left Column: Meeting Details (Crisp Slate Info) -->
+            <div
+              class="w-full md:w-5/12 bg-tertiary p-space-lg flex flex-col justify-between border-b md:border-b-0 md:border-r border-tertiary-container">
+              <div class="space-y-space-md">
+                <div class="flex items-center gap-space-sm">
+                  <div
+                    class="w-10 h-10 bg-on-tertiary flex items-center justify-center text-tertiary font-headline-sm text-headline-sm">
+                    TM
+                  </div>
+                  <div class="flex flex-col">
+                    <span
+                      class="font-label-caps text-label-caps tracking-widest uppercase text-on-tertiary-container font-semibold">TIECO
+                      MEDIA INC.</span>
+                    <span
+                      class="font-caption-italic text-caption-italic text-on-tertiary-fixed-variant italic text-xs">Editorial
+                      &amp; Creative Strategy</span>
+                  </div>
+                </div>
+                <div>
+                  <h3
+                    class="font-headline-md text-headline-md uppercase text-on-tertiary tracking-wide m-0 leading-tight">
+                    20-MIN CREATIVE DISCOVERY
+                  </h3>
+                  <p class="font-caption-italic text-caption-italic text-on-tertiary-container italic mt-2">
+                    Discussion of project scope, raw asset review, target retention benchmarks, and delivery timetable.
+                  </p>
+                </div>
+                <div class="space-y-2 pt-space-xs">
+                  <div class="flex items-center gap-2.5 text-on-tertiary">
+                    <span class="material-symbols-outlined text-[18px] text-on-tertiary-container">schedule</span>
+                    <span class="font-body-md text-sm font-medium">20 mins</span>
+                  </div>
+                  <div class="flex items-center gap-2.5 text-on-tertiary">
+                    <span class="material-symbols-outlined text-[18px] text-on-tertiary-container">videocam</span>
+                    <span class="font-body-md text-sm font-medium">Google Meet (Auto-generated link)</span>
+                  </div>
+                  <div class="flex items-center gap-2.5 text-on-tertiary">
+                    <span class="material-symbols-outlined text-[18px] text-on-tertiary-container">public</span>
+                    <span class="font-body-md text-sm font-medium">Pacific Daylight Time (PDT)</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Bottom Footer Info -->
+              <div
+                class="pt-space-md border-t border-tertiary-container/60 mt-space-md flex items-center justify-between text-xs text-on-tertiary-container">
+                <span class="font-caption-italic italic">Instant confirmation &amp; invite</span>
+                <span class="font-ticker-mono tracking-widest font-semibold uppercase">SECURE DESK</span>
+              </div>
+            </div>
+            <!-- Right Column: Interactive Calendar & Time Slot Grid -->
+            <div class="w-full md:w-7/12 bg-white text-on-tertiary p-space-lg flex flex-col justify-between">
+              <div>
+                <!-- Header for Month Picker -->
+                <div class="flex items-center justify-between mb-space-md">
+                  <h4 class="font-headline-sm text-headline-sm uppercase text-on-tertiary tracking-wider m-0">SELECT A
+                    DATE &amp; TIME</h4>
+                  <div class="flex items-center gap-1">
+                    <button aria-label="Previous month"
+                      class="w-8 h-8 rounded flex items-center justify-center hover:bg-tertiary transition-colors text-on-tertiary"
+                      type="button">
+                      <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                    </button>
+                    <span
+                      class="font-label-caps text-label-caps text-xs tracking-wider text-on-tertiary font-semibold uppercase px-2">NOVEMBER
+                      2025</span>
+                    <button aria-label="Next month"
+                      class="w-8 h-8 rounded flex items-center justify-center hover:bg-tertiary transition-colors text-on-tertiary"
+                      type="button">
+                      <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- Mini Calendar Matrix -->
+                <div class="grid grid-cols-7 gap-1 text-center mb-space-md">
+                  <span
+                    class="font-label-caps text-[11px] text-on-tertiary-container uppercase tracking-wider py-1">MON</span>
+                  <span
+                    class="font-label-caps text-[11px] text-on-tertiary-container uppercase tracking-wider py-1">TUE</span>
+                  <span
+                    class="font-label-caps text-[11px] text-on-tertiary-container uppercase tracking-wider py-1">WED</span>
+                  <span
+                    class="font-label-caps text-[11px] text-on-tertiary-container uppercase tracking-wider py-1">THU</span>
+                  <span
+                    class="font-label-caps text-[11px] text-on-tertiary-container uppercase tracking-wider py-1">FRI</span>
+                  <span
+                    class="font-label-caps text-[11px] text-on-tertiary-container uppercase tracking-wider py-1">SAT</span>
+                  <span
+                    class="font-label-caps text-[11px] text-on-tertiary-container uppercase tracking-wider py-1">SUN</span>
+                  <!-- Calendar Days -->
+                  <span class="text-xs text-secondary py-2">27</span>
+                  <span class="text-xs text-secondary py-2">28</span>
+                  <span class="text-xs text-secondary py-2">29</span>
+                  <span class="text-xs text-secondary py-2">30</span>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">1</button>
+                  <span class="text-xs text-secondary py-2">2</span>
+                  <span class="text-xs text-secondary py-2">3</span>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">4</button>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">5</button>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">6</button>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">7</button>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">8</button>
+                  <span class="text-xs text-secondary py-2">9</span>
+                  <span class="text-xs text-secondary py-2">10</span>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">11</button>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">12</button>
+                  <!-- Selected Day Indicator -->
+                  <button class="text-xs font-bold py-2 bg-on-tertiary text-tertiary" type="button">13</button>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">14</button>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">15</button>
+                  <span class="text-xs text-secondary py-2">16</span>
+                  <span class="text-xs text-secondary py-2">17</span>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">18</button>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">19</button>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">20</button>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">21</button>
+                  <button class="text-xs font-semibold py-2 hover:bg-tertiary transition-colors text-on-tertiary"
+                    type="button">22</button>
+                  <span class="text-xs text-secondary py-2">23</span>
+                  <span class="text-xs text-secondary py-2">24</span>
+                </div>
+                <!-- Available Slots for Selected Day -->
+                <div class="space-y-space-xs">
+                  <span
+                    class="font-label-caps text-[11px] text-on-tertiary-container uppercase tracking-wider block">AVAILABLE
+                    TIME SLOTS (THU, NOV 13)</span>
+                  <div class="grid grid-cols-2 gap-2">
+                    <button
+                      class="w-full py-2 px-3 text-xs font-semibold bg-tertiary hover:bg-on-tertiary hover:text-white transition-colors text-on-tertiary text-center"
+                      type="button">
+                      09:30 AM PDT
+                    </button>
+                    <button
+                      class="w-full py-2 px-3 text-xs font-semibold bg-tertiary hover:bg-on-tertiary hover:text-white transition-colors text-on-tertiary text-center"
+                      type="button">
+                      11:00 AM PDT
+                    </button>
+                    <button class="w-full py-2 px-3 text-xs font-bold bg-on-tertiary text-tertiary text-center"
+                      type="button">
+                      01:30 PM PDT • PICKED
+                    </button>
+                    <button
+                      class="w-full py-2 px-3 text-xs font-semibold bg-tertiary hover:bg-on-tertiary hover:text-white transition-colors text-on-tertiary text-center"
+                      type="button">
+                      03:00 PM PDT
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Crisp Primary Booking Action Button -->
+              <div class="pt-space-md mt-space-md border-t border-tertiary-container">
+                <button
+                  class="w-full py-3 bg-on-tertiary hover:bg-black text-white font-label-caps text-label-caps uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-2"
+                  type="button">
+                  <span class="">CONFIRM RESERVATION</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======================================================== -->
+      <!-- CLIENT LOGO RASTER & STUDIO RECOGNITION                  -->
+      <!-- ======================================================== -->
+      <section class="w-full px-margin-mobile lg:px-margin py-space-lg bg-surface-container-low/50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-md">
+          <div class="flex items-center gap-space-sm">
+            <span class="w-2 h-2 bg-primary-container"></span>
+            <span
+              class="font-ticker-mono text-ticker-mono text-[12px] text-on-surface-variant tracking-widest uppercase">TRUSTED
+              BY ACCELERATED CREATORS &amp; ENTERTAINMENT STUDIOS</span>
+          </div>
+          <div class="flex flex-wrap items-center gap-space-lg opacity-70 grayscale">
+            <span class="font-headline-sm text-headline-sm uppercase tracking-widest text-on-surface">VOGUE REELS</span>
+            <span class="font-headline-sm text-headline-sm uppercase tracking-widest text-on-surface">NETFLIX
+              DOCS</span>
+            <span class="font-headline-sm text-headline-sm uppercase tracking-widest text-on-surface">SPOTIFY
+              ORIGINALS</span>
+            <span class="font-headline-sm text-headline-sm uppercase tracking-widest text-on-surface">A24 LABS</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="w-full bg-surface-container-lowest py-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.5)]">
+    <div class="w-full px-margin-mobile lg:px-margin">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter py-space-lg">
+        <div class="md:col-span-4 flex flex-col justify-between space-y-space-md">
+          <div>
+            <div class="flex items-center gap-space-sm mb-space-sm"><img alt="TIECO MEDIA - WORKING LOGO PASS 01.png"
+                class="h-6 w-auto object-contain filter invert contrast-200"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1XfzFi2BhlNZBwUC5WwM84li-TLcl0ptCILxFmuc780MHaSTDgWTGOmT9vsDBgPt7VqQxm5FpRwSFO7qgmUmDY3LuD0yS6mzOBEXA12i9DsDaV4JJER_E7xBvhpHYWPfDfbfHGnMsDd0Zljpc-CNQhvcgciYtEtOy3u8zdWIuPtVX4iK_nk_nz8N38cF4Ww3HMNYHuZaqE0-6BKB20I-ds4q_rw1jb1DCQHz8s-s3KxWndgWQxqQC4jYvbURct4nFnDyl_1mEmch3c"><span
+                class="font-headline-sm text-headline-sm uppercase text-on-surface">TIECO MEDIA</span></div>
+            <p class="font-caption-italic text-caption-italic text-on-surface-variant max-w-sm">Anamorphic
+              post-production, visionary direction, and razor-sharp editorial architecture for cinematic narratives and
+              prestige series.</p>
+          </div>
+          <div class="flex flex-col space-y-space-xs"><span
+              class="font-ticker-mono text-ticker-mono text-on-surface-variant text-[12px] tracking-[0.2em]">LOCATION /
+              SOUNDSTAGE</span><span class="font-caption-italic text-caption-italic text-on-surface">Stage 04, Arts
+              District — Los Angeles, CA</span></div>
+        </div>
+        <div class="md:col-span-4 flex flex-col justify-between space-y-space-md">
+          <div><span
+              class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant block mb-space-sm uppercase">COMMUNICATION
+              CHANNEL</span><a class="font-title-editorial text-title-editorial text-primary hover:underline block"
+              href="mailto:hello@tiecomedia.com">hello@tiecomedia.com</a><span
+              class="font-ticker-mono text-ticker-mono text-[12px] text-on-surface-variant block mt-space-xs tracking-wider">DIRECT
+              INQUIRIES &amp; COMMISSION DESK</span></div>
+          <div class="flex flex-col space-y-space-xs"><span
+              class="font-ticker-mono text-ticker-mono text-on-surface-variant text-[12px] tracking-[0.2em]">AVAILABILITY</span><span
+              class="font-caption-italic text-caption-italic text-primary-container">Booking Q3/Q4 Post-Production &amp;
+              Color Mastering</span></div>
+        </div>
+        <div class="md:col-span-4 flex flex-col justify-between space-y-space-md">
+          <div class="flex flex-col space-y-space-sm"><span
+              class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant uppercase">TRANSMISSION
+              &amp; ARCHIVES</span>
+            <div class="flex flex-col space-y-space-xs"><a
+                class="font-label-caps text-label-caps text-on-surface hover:text-primary-container transition-colors tracking-widest uppercase"
+                href="#">VIMEO / 4K MASTERS</a><a
+                class="font-label-caps text-label-caps text-on-surface hover:text-primary-container transition-colors tracking-widest uppercase"
+                href="#">INSTAGRAM / ON-SET LOGS</a><a
+                class="font-label-caps text-label-caps text-on-surface hover:text-primary-container transition-colors tracking-widest uppercase"
+                href="#">YOUTUBE / BTS ARCHIVE</a></div>
+          </div>
+          <div class="flex items-center gap-space-md"><span
+              class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span
+              class="font-ticker-mono text-ticker-mono text-[11px] text-on-surface-variant tracking-widest">SYSTEMS
+              ACTIVE // 24 FPS TIME LOCKED</span></div>
+        </div>
+      </div>
+      <div class="w-full pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm"><span
+          class="font-caption-italic text-caption-italic text-on-surface-variant text-sm">© 2025 TIECO MEDIA INC. ALL
+          MASTER RIGHTS RESERVED.</span>
+        <div class="flex items-center gap-space-md"><a
+            class="font-caption-italic text-caption-italic text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="privacy-legal" href="#">Archival Rights</a><span
+            class="text-outline-variant font-caption-italic text-caption-italic">•</span><a
+            class="font-caption-italic text-caption-italic text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="tech-spec" href="#">Technical Spec</a></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
