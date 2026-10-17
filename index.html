@@ -24,6 +24,10 @@
         padding: 0;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         overscroll-behavior: none;
       }
@@ -50,26 +54,44 @@
   <header
     class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
     <div class="h-20 w-full px-margin-mobile lg:px-margin flex items-center justify-between">
-      <div class="flex items-center gap-space-md"><img alt="TIECO MEDIA - WORKING LOGO PASS 01.png"
+      <a href="#home" class="flex items-center gap-space-md hover:opacity-90 transition-opacity"><img alt="TIECO MEDIA - WORKING LOGO PASS 01.png"
           class="h-8 w-auto object-contain filter invert contrast-200"
           src="https://lh3.googleusercontent.com/aida/AEtjO1XfzFi2BhlNZBwUC5WwM84li-TLcl0ptCILxFmuc780MHaSTDgWTGOmT9vsDBgPt7VqQxm5FpRwSFO7qgmUmDY3LuD0yS6mzOBEXA12i9DsDaV4JJER_E7xBvhpHYWPfDfbfHGnMsDd0Zljpc-CNQhvcgciYtEtOy3u8zdWIuPtVX4iK_nk_nz8N38cF4Ww3HMNYHuZaqE0-6BKB20I-ds4q_rw1jb1DCQHz8s-s3KxWndgWQxqQC4jYvbURct4nFnDyl_1mEmch3c">
         <div class="flex flex-col"><span
             class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface uppercase">TIECO MEDIA</span><span
             class="font-caption-italic text-caption-italic text-on-surface-variant italic hidden sm:block">Cinema &amp;
             Editorial Post</span></div>
-      </div>
-      <nav class="hidden lg:flex items-center gap-space-lg"
+      </a>
+      <nav id="desktop-nav" class="hidden lg:flex items-center gap-space-lg"
         data-active-classes="text-primary-container bg-surface-container-high"><a aria-current="page"
-          class="font-label-caps transition-colors uppercase px-space-xs py-space-xs text-primary-container bg-surface-container-high"
-          data-path="home" href="#">HOME</a><a
-          class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors uppercase px-space-xs py-space-xs"
-          data-path="work" href="#">WORK</a><a
-          class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors uppercase px-space-xs py-space-xs"
-          data-path="about" href="#">ABOUT</a><a
-          class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors uppercase px-space-xs py-space-xs"
-          data-path="calendly" href="#">CALENDLY</a><a href="mailto:hello@tiecomedia.com"
+          class="nav-link font-label-caps transition-colors uppercase px-space-xs py-space-xs text-primary-container bg-surface-container-high"
+          data-path="home" href="#home">HOME</a><a
+          class="nav-link font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors uppercase px-space-xs py-space-xs"
+          data-path="work" href="#work">WORK</a><a
+          class="nav-link font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors uppercase px-space-xs py-space-xs"
+          data-path="about" href="#about">ABOUT</a><a href="#calendly"
           class="px-space-md py-1.5 bg-primary-container text-surface-container-lowest font-label-caps text-label-caps uppercase tracking-widest font-semibold hover:bg-surface-tint transition-colors flex items-center gap-1.5"><span
             class="">CONTACT US</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a></nav>
+      <!-- Mobile menu toggle button -->
+      <button id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false"
+        class="lg:hidden p-2 text-on-surface hover:text-primary-container focus:outline-none transition-colors">
+        <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+      </button>
+    </div>
+    <!-- Mobile dropdown navigation -->
+    <div id="mobile-menu"
+      class="hidden lg:hidden flex flex-col w-full bg-surface-container-lowest/95 backdrop-blur-2xl border-t border-surface-container-high px-margin-mobile py-4 space-y-2 shadow-2xl transition-all">
+      <a href="#home" data-path="home"
+        class="mobile-nav-link block font-label-caps text-label-caps uppercase px-3 py-2 text-primary-container bg-surface-container-high transition-colors">HOME</a>
+      <a href="#work" data-path="work"
+        class="mobile-nav-link block font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface uppercase px-3 py-2 transition-colors">WORK</a>
+      <a href="#about" data-path="about"
+        class="mobile-nav-link block font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface uppercase px-3 py-2 transition-colors">ABOUT</a>
+      <a href="#calendly"
+        class="mt-2 px-space-md py-2.5 bg-primary-container text-surface-container-lowest font-label-caps text-label-caps uppercase tracking-widest font-semibold hover:bg-surface-tint transition-colors flex items-center justify-between">
+        <span>CONTACT US</span>
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </a>
     </div>
   </header>
   <main class="w-full pt-20 bg-surface-container-lowest min-h-screen">
@@ -77,7 +99,7 @@
       <!-- ======================================================== -->
       <!-- HERO: 01 BOUTIQUE SHORT-FORM CINEMA & STORYTELLING       -->
       <!-- ======================================================== -->
-      <section class="relative w-full px-margin-mobile lg:px-margin pb-space-xl">
+      <section id="home" class="relative w-full px-margin-mobile lg:px-margin pb-space-xl scroll-mt-24">
         <div class="max-w-7xl mx-auto flex flex-col space-y-space-lg">
           <!-- Top Meta Eyebrow with Editorial Marker -->
           <div class="flex items-center justify-between pt-space-md">
@@ -193,7 +215,7 @@
       <!-- ======================================================== -->
       <!-- SECTION 2: FEATURED PRODUCTIONS & PORTFOLIO             -->
       <!-- ======================================================== -->
-      <section class="w-full px-margin-mobile lg:px-margin py-space-xl">
+      <section id="work" class="w-full px-margin-mobile lg:px-margin py-space-xl scroll-mt-24">
         <div class="max-w-7xl mx-auto flex flex-col space-y-space-lg">
           <!-- Section Title & Taxonomy Header -->
           <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
@@ -433,10 +455,9 @@
       <!-- ======================================================== -->
       <!-- SECTION 3: DISTINCT CRISP CALENDLY SCHEDULING UI         -->
       <!-- ======================================================== -->
-      <section class="w-full px-margin-mobile lg:px-margin py-space-xl bg-surface-container-lowest relative"
-        id="booking-console">
+      <section id="calendly" class="w-full px-margin-mobile lg:px-margin py-space-xl bg-surface-container-lowest relative scroll-mt-24">
         <!-- Subtle architectural backdrop accents -->
-        <div class="max-w-7xl mx-auto flex flex-col items-center">
+        <div id="booking-console" class="max-w-7xl mx-auto flex flex-col items-center">
           <!-- Section Intro Header -->
           <div class="text-center max-w-2xl mb-space-lg space-y-space-xs">
             <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high">
@@ -631,9 +652,9 @@
         </div>
       </section>
       <!-- ======================================================== -->
-      <!-- CLIENT LOGO RASTER & STUDIO RECOGNITION                  -->
+      <!-- CLIENT LOGO RASTER & STUDIO RECOGNITION (ABOUT)          -->
       <!-- ======================================================== -->
-      <section class="w-full px-margin-mobile lg:px-margin py-space-lg bg-surface-container-low/50">
+      <section id="about" class="w-full px-margin-mobile lg:px-margin py-space-lg bg-surface-container-low/50 scroll-mt-24">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-md">
           <div class="flex items-center gap-space-sm">
             <span class="w-2 h-2 bg-primary-container"></span>
@@ -653,7 +674,7 @@
       </section>
     </div>
   </main>
-  <footer class="w-full bg-surface-container-lowest py-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.5)]">
+  <footer id="contact" class="w-full bg-surface-container-lowest py-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.5)] scroll-mt-24">
     <div class="w-full px-margin-mobile lg:px-margin">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter py-space-lg">
         <div class="md:col-span-4 flex flex-col justify-between space-y-space-md">
@@ -714,6 +735,136 @@
     </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const desktopLinks = document.querySelectorAll('#desktop-nav .nav-link');
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+
+      // Toggle mobile menu
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = !mobileMenu.classList.contains('hidden');
+          if (isOpen) {
+            closeMobileMenu();
+          } else {
+            openMobileMenu();
+          }
+        });
+
+        // Close mobile menu if clicked outside
+        document.addEventListener('click', (e) => {
+          if (mobileMenu && !mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            closeMobileMenu();
+          }
+        });
+      }
+
+      function openMobileMenu() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.remove('hidden');
+        if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        if (menuIcon) menuIcon.textContent = 'close';
+      }
+
+      function closeMobileMenu() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.add('hidden');
+        if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        if (menuIcon) menuIcon.textContent = 'menu';
+      }
+
+      // Smooth scroll handler for anchor links
+      const scrollLinks = document.querySelectorAll('a[href^="#"]');
+      scrollLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            closeMobileMenu();
+
+            const headerOffset = 80; // height of fixed header (h-20)
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+
+            if (history.pushState) {
+              history.pushState(null, null, targetId);
+            }
+
+            const path = targetId.replace('#', '');
+            setActiveNav(path);
+          }
+        });
+      });
+
+      // Update active nav styling
+      function setActiveNav(activePath) {
+        const activeDesktopClasses = ['text-primary-container', 'bg-surface-container-high'];
+        const inactiveDesktopClasses = ['text-on-surface-variant'];
+
+        desktopLinks.forEach(link => {
+          const path = link.getAttribute('data-path');
+          if (path === activePath) {
+            link.classList.add(...activeDesktopClasses);
+            link.classList.remove(...inactiveDesktopClasses);
+            link.setAttribute('aria-current', 'page');
+          } else {
+            link.classList.remove(...activeDesktopClasses);
+            link.classList.add(...inactiveDesktopClasses);
+            link.removeAttribute('aria-current');
+          }
+        });
+
+        mobileLinks.forEach(link => {
+          const path = link.getAttribute('data-path');
+          if (path === activePath) {
+            link.classList.add('text-primary-container', 'bg-surface-container-high');
+            link.classList.remove('text-on-surface-variant');
+          } else {
+            link.classList.remove('text-primary-container', 'bg-surface-container-high');
+            link.classList.add('text-on-surface-variant');
+          }
+        });
+      }
+
+      // ScrollSpy: observe sections to highlight current active link
+      const sectionKeys = ['home', 'work', 'about'];
+      const sections = sectionKeys.map(id => document.getElementById(id)).filter(Boolean);
+
+      let isTicking = false;
+      function onScroll() {
+        if (!isTicking) {
+          window.requestAnimationFrame(() => {
+            const scrollPos = window.pageYOffset + 120; // Trigger line slightly below header
+
+            for (let i = sections.length - 1; i >= 0; i--) {
+              const sec = sections[i];
+              if (sec.offsetTop <= scrollPos) {
+                setActiveNav(sec.id);
+                break;
+              }
+            }
+            isTicking = false;
+          });
+          isTicking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll(); // initial check
+    });
+  </script>
 </body>
 
 </html>
