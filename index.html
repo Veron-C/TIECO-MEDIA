@@ -838,7 +838,6 @@
 
       function openVideo(videoId, title, aspect) {
         if (!videoModal || !modalIframe) return;
-        modalIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
         if (modalTitle) modalTitle.textContent = title ? title.toUpperCase() : 'PLAYING VIDEO';
         
         const isVertical = aspect === 'vertical';
@@ -846,15 +845,16 @@
           modalYtLink.href = isVertical ? `https://www.youtube.com/shorts/${videoId}` : `https://www.youtube.com/watch?v=${videoId}`;
         }
 
+        // Apply high-DPI player dimensions BEFORE setting src so YouTube initializes in maximum 1080p resolution
         if (modalContent && videoFrame) {
           if (isVertical) {
-            modalContent.className = 'relative w-full max-w-[390px] bg-surface-container-lowest border border-outline-variant/40 rounded-lg overflow-hidden shadow-2xl z-10 transform transition-all duration-300 scale-100';
-            videoFrame.className = 'relative w-full aspect-[9/16] bg-black max-h-[75vh] flex items-center justify-center';
-            if (formatBadge) formatBadge.textContent = '9:16 VERTICAL SHORT // HD PLAYBACK';
+            modalContent.className = 'relative w-full max-w-[460px] bg-surface-container-lowest border border-outline-variant/40 rounded-lg overflow-hidden shadow-2xl z-10 transform transition-all duration-300 scale-100';
+            videoFrame.className = 'relative w-full aspect-[9/16] bg-black max-h-[82vh] flex items-center justify-center';
+            if (formatBadge) formatBadge.textContent = '9:16 VERTICAL SHORT // HD 1080P MASTER';
           } else {
-            modalContent.className = 'relative w-full max-w-5xl bg-surface-container-lowest border border-outline-variant/40 rounded-lg overflow-hidden shadow-2xl z-10 transform transition-all duration-300 scale-100';
+            modalContent.className = 'relative w-full max-w-6xl xl:max-w-7xl bg-surface-container-lowest border border-outline-variant/40 rounded-lg overflow-hidden shadow-2xl z-10 transform transition-all duration-300 scale-100';
             videoFrame.className = 'relative w-full aspect-video bg-black flex items-center justify-center';
-            if (formatBadge) formatBadge.textContent = '16:9 WIDESCREEN // HD PLAYBACK';
+            if (formatBadge) formatBadge.textContent = '16:9 CINEMA WIDESCREEN // HD 1080P MASTER';
           }
         }
 
@@ -862,6 +862,12 @@
         videoModal.classList.add('opacity-100', 'pointer-events-auto');
         videoModal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('overflow-hidden');
+
+        // Set stream URL with vq=hd1080, hd=1, enablejsapi=1 after container layout is rendered
+        const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&vq=hd1080&hd=1&rel=0&modestbranding=1&enablejsapi=1&playsinline=1`;
+        requestAnimationFrame(() => {
+          modalIframe.src = embedUrl;
+        });
       }
 
       function closeVideo() {
@@ -941,22 +947,29 @@
           class="w-full h-full border-0"
           src=""
           title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
           allowfullscreen>
         </iframe>
       </div>
 
       <!-- Modal Footer -->
       <div class="flex items-center justify-between px-4 py-2.5 bg-surface-container-low/70 text-xs">
-        <span id="modal-format-badge" class="font-ticker-mono text-[11px] text-on-surface-variant">TIECO MEDIA ARCHIVE // HD PLAYBACK</span>
-        <a id="modal-youtube-link"
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary-container transition-colors uppercase flex items-center gap-1.5">
-          <span>WATCH ON YOUTUBE</span>
-          <span class="material-symbols-outlined text-[14px]">open_in_new</span>
-        </a>
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-ping"></span>
+          <span id="modal-format-badge" class="font-ticker-mono text-[11px] text-on-surface-variant">HD 1080P MASTER // MAXIMUM FIDELITY</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="hidden sm:inline font-ticker-mono text-[11px] text-on-surface-variant/70">USE ⚙ FOR RESOLUTION</span>
+          <span class="hidden sm:inline text-outline-variant">•</span>
+          <a id="modal-youtube-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary-container transition-colors uppercase flex items-center gap-1.5">
+            <span>WATCH ON YOUTUBE</span>
+            <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
