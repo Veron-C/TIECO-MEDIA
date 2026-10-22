@@ -865,9 +865,9 @@
 
         // Set stream URL with vq=hd1080, hd=1, enablejsapi=1 after container layout is rendered
         const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&vq=hd1080&hd=1&rel=0&modestbranding=1&enablejsapi=1&playsinline=1`;
-        requestAnimationFrame(() => {
+        setTimeout(() => {
           modalIframe.src = embedUrl;
-        });
+        }, 50);
       }
 
       function closeVideo() {
@@ -948,6 +948,7 @@
           src=""
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen>
         </iframe>
       </div>
