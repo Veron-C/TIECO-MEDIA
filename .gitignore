@@ -1,0 +1,15 @@
+# Media and raw production footage (kept locally in media library)
+*.mp4
+*.mov
+*.af
+COLOURS OF AUTUMN 1080p.png
+KINGDOM CULTURE VIDEOS/
+MAKAYA MEDIA PITCH/
+SONSHIP RETREAT VIDEO/
+TIOLUWANI ELESHO CONTENT/
+WORK DONE COLLECTION FOR WEBSITE/
+
+# Operating system / Editor files
+.DS_Store
+Thumbs.db
+node_modules/

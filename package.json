@@ -1,0 +1,13 @@
+{
+  "name": "tieco-media",
+  "version": "1.0.0",
+  "description": "TIECO Media website",
+  "main": "server.cjs",
+  "scripts": {
+    "start": "node server.cjs",
+    "dev": "node server.cjs"
+  },
+  "keywords": [],
+  "author": "Veron-C",
+  "license": "ISC"
+}
