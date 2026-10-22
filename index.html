@@ -44,6 +44,26 @@
     ::-webkit-scrollbar {
       display: none;
     }
+
+    @keyframes marquee {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    .marquee-content {
+      display: flex;
+      width: max-content;
+      animation: marquee 25s linear infinite;
+      will-change: transform;
+    }
+
+    .marquee-content:hover {
+      animation-play-state: paused;
+    }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
   <script
@@ -174,28 +194,35 @@
       <!-- CONTINUOUS CINEMA MARQUEE RIBBON                         -->
       <!-- ======================================================== -->
       <div
-        class="w-full bg-surface-container-low py-space-sm overflow-hidden whitespace-nowrap select-none shadow-inner">
-        <div class="flex items-center gap-space-lg animate-[marquee_24s_linear_infinite]"><span
-            class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">SHORT-FORM
-            POST-PRODUCTION</span><span class="text-primary-container text-headline-md">—</span><span
-            class="font-headline-md text-headline-md tracking-wider uppercase text-secondary">PODCAST
-            TRAILERS</span><span class="text-primary-container text-headline-md">—</span><span
-            class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">EVENT
-            HIGHLIGHTS</span><span class="text-primary-container text-headline-md">—</span><span
-            class="font-headline-md text-headline-md tracking-wider uppercase text-secondary">SHORT-FORM
-            CLIPS</span><span class="text-primary-container text-headline-md">—</span><span
-            class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">SHORT-FORM BRANDING &amp;
-            IDEATION</span><span class="text-primary-container text-headline-md">—</span><span
-            class="font-headline-md text-headline-md tracking-wider uppercase text-secondary">SHORT-FORM
-            POST-PRODUCTION</span><span class="text-primary-container text-headline-md">—</span><span
-            class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">PODCAST
-            TRAILERS</span><span class="text-primary-container text-headline-md">—</span><span
-            class="font-headline-md text-headline-md tracking-wider uppercase text-secondary">EVENT
-            HIGHLIGHTS</span><span class="text-primary-container text-headline-md">—</span><span
-            class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">SHORT-FORM
-            CLIPS</span><span class="text-primary-container text-headline-md">—</span><span
-            class="font-headline-md text-headline-md tracking-wider uppercase text-secondary">SHORT-FORM BRANDING &amp;
-            IDEATION</span><span class="text-primary-container text-headline-md">—</span></div>
+        class="w-full bg-surface-container-low py-space-sm overflow-hidden whitespace-nowrap select-none shadow-inner border-y border-outline-variant/10">
+        <div class="marquee-content flex items-center">
+          <!-- Marquee Track 1 -->
+          <div class="flex items-center gap-space-lg shrink-0 pr-space-lg">
+            <span class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">SHORT-FORM POST-PRODUCTION</span>
+            <span class="text-primary-container text-headline-md">—</span>
+            <span class="font-headline-md text-headline-md tracking-wider uppercase text-secondary">PODCAST TRAILERS</span>
+            <span class="text-primary-container text-headline-md">—</span>
+            <span class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">EVENT HIGHLIGHTS</span>
+            <span class="text-primary-container text-headline-md">—</span>
+            <span class="font-headline-md text-headline-md tracking-wider uppercase text-secondary">SHORT-FORM CLIPS</span>
+            <span class="text-primary-container text-headline-md">—</span>
+            <span class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">SHORT-FORM BRANDING &amp; IDEATION</span>
+            <span class="text-primary-container text-headline-md">—</span>
+          </div>
+          <!-- Marquee Track 2 (Duplicate for Seamless Infinite Loop) -->
+          <div class="flex items-center gap-space-lg shrink-0 pr-space-lg" aria-hidden="true">
+            <span class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">SHORT-FORM POST-PRODUCTION</span>
+            <span class="text-primary-container text-headline-md">—</span>
+            <span class="font-headline-md text-headline-md tracking-wider uppercase text-secondary">PODCAST TRAILERS</span>
+            <span class="text-primary-container text-headline-md">—</span>
+            <span class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">EVENT HIGHLIGHTS</span>
+            <span class="text-primary-container text-headline-md">—</span>
+            <span class="font-headline-md text-headline-md tracking-wider uppercase text-secondary">SHORT-FORM CLIPS</span>
+            <span class="text-primary-container text-headline-md">—</span>
+            <span class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">SHORT-FORM BRANDING &amp; IDEATION</span>
+            <span class="text-primary-container text-headline-md">—</span>
+          </div>
+        </div>
       </div>
       <!-- ======================================================== -->
       <!-- SECTION 2: FEATURED PRODUCTIONS & PORTFOLIO             -->
